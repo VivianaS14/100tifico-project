@@ -1,2 +1,8 @@
-// Estilos generales
-@use './sass/_style';
+// Body styles
+@use './sass/_body';
+
+// Header styles
+@use './sass/header';
+
+//Home styles
+@use './sass/characters';

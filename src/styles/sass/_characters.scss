@@ -1,0 +1,79 @@
+@use './mixins';
+
+%card-container {
+    display: block;
+    text-decoration: none;
+    box-shadow: 8px 14px 38px rgba($color: #eeeeee, $alpha: .06), 
+        1px 3px 8px rgba($color: #eeeeee, $alpha: .03);
+    border-radius: 10px;
+    margin: 0 0 20px 0;
+    animation-duration: 2s;
+    animation-name: fade;
+}
+
+%card-img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px 5px 0 0;
+}
+
+.characters {
+    @include mixins.grid-template();
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.characters-inner {
+    @include mixins.grid-template();
+    grid-template-columns: 1fr 2fr;
+}
+
+.characters-card {
+    @extend %card-container;
+
+    img {
+        @extend %card-img;
+    }
+
+    h2 {
+        padding: 5px 10px;
+        font-weight: 400;
+        text-align: center;
+    }
+
+    h3 {
+        font-size: 18px;
+        font-weight: 400;
+        text-align: left;
+        margin: 20px;
+    }
+}
+
+.character-item {
+    @extend %card-container;
+
+    img {
+        @extend %card-img;
+    }
+
+    h2 {
+        font-size: 18px;
+        font-weight: 300;
+        padding: 5px 10px;
+        display: flex;
+        justify-content: space-between;
+    }
+    
+    a {
+        text-decoration: none;
+        @include mixins.format-text();
+    }
+}
+
+@keyframes fade {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}

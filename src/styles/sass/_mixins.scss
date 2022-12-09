@@ -1,0 +1,12 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400&display=swap');
+$text-color: #f1f1f1;
+
+@mixin format-text {
+    color: $text-color;
+    font-family: 'Open Sans', sans-serif;
+}
+
+@mixin grid-template {
+    display: grid;
+    gap: 1.5em;
+}
