@@ -11,6 +11,10 @@ module.exports = {
     resolve: {
         extensions: ['.js']
     },
+    mode: 'production',
+    devServer: {
+        port: 8000
+    },
     module: {
         rules: [
             {   /* Babel */
